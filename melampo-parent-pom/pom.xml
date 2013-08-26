@@ -1,0 +1,84 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.cnr.isti.melampo</groupId>
+	<artifactId>melampo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<!--
+	<modules>
+		<module>demo</module>
+		<module>index-builder</module>
+		<module>vir</module>
+		<module>core</module>
+	</modules>
+	-->
+	<repositories>
+		<!-- conja -->
+		<repository>
+			<id>dev.davidsoergel.com releases</id>
+			<url>http://dev.davidsoergel.com/artifactory/repo</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!-- <repository> <id>dev.davidsoergel.com snapshots</id> <url>http://dev.davidsoergel.com/artifactory/repo</url> 
+			<releases> <enabled>false</enabled> </releases> </repository> -->
+
+		<repository>
+			<id>mvnrepository.com</id>
+			<name>mvnrepository.com</name>
+			<url>http://www.mvnrepository.com/artifact</url>
+		</repository>
+
+		<!-- Jama original ... but also found on isti repository <dependency> <groupId>gov.nist.math.jama</groupId> 
+			<artifactId>gov.nist.math.jama</artifactId> <version>1.1.0</version> </dependency> -->
+
+		<!-- melampo related jars -->
+		<repository>
+			<id>ir-image</id>
+			<name>ir-image repository</name>
+			<url>http://virserv.isti.cnr.it:8080/maven2</url>
+		</repository>
+
+		<repository>
+			<id>repo1</id>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>ibiblio</id>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.davidsoergel</groupId>
+				<artifactId>conja</artifactId>
+				<version>1.051</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version.junit}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<version.junit>4.10</version.junit>
+
+	</properties>
+	<name>melmapo-parent-pom</name>
+</project>
